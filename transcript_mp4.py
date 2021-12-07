@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import json
 import os
 import subprocess
 import sys
@@ -28,6 +28,6 @@ while True:
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
-        print(rec.Result())
+        print(json.loads(rec.Result())["text"])
 
-print(rec.FinalResult())
+print(json.loads(rec.FinalResult())["text"])
